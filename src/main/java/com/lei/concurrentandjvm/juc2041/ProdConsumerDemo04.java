@@ -44,6 +44,7 @@ class Phone {
           > 一个是Class全局锁class，一个是当前对象的对象锁this，相互之间没有关系，所以send SMS先;
           > 8. 跟上面的其实没有区别，this对象换了一个，所以结果跟上面一样
 
+    3,5,6,7,8: 不是send Email在前面的情况: 要么是根本不争抢资源，要么是锁根本不是同一个锁, 锁住各自自己的资源也没关系
 * */
 public class ProdConsumerDemo04 {
     public static void main(String[] args) throws Exception {
