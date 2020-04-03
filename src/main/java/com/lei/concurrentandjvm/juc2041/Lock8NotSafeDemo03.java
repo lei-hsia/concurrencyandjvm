@@ -46,7 +46,7 @@ class Phone {
 
     3,5,6,7,8: 不是send Email在前面的情况: 要么是根本不争抢资源，要么是锁根本不是同一个锁, 锁住各自自己的资源也没关系
 * */
-public class ProdConsumerDemo04 {
+public class Lock8NotSafeDemo03 {
     public static void main(String[] args) throws Exception {
         Phone phone = new Phone();
         Phone phone2 = new Phone();
@@ -63,8 +63,8 @@ public class ProdConsumerDemo04 {
 
         new Thread(() -> {
             try {
-                // phone.sendSMS();
-                phone2.sendSMS();
+                phone.sendSMS();
+                //phone2.sendSMS();
                 //phone.useCharger();
             } catch (Exception e) {
                 e.printStackTrace();
