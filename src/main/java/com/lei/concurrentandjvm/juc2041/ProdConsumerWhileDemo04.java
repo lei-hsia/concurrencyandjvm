@@ -4,6 +4,8 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+// jdk 1.5: synchronized, Object monitor methods: wait, notify, notifyAll
+// later:   Lock, Condition: condition: await, signal, signalAll
 class AirCondition {
     private int number = 0;
 
@@ -130,5 +132,6 @@ public class ProdConsumerWhileDemo04 {
                 }
             }
         }, "D").start();
+
     }
 }
