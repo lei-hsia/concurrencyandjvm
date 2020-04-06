@@ -1,5 +1,6 @@
 package com.lei.concurrentandjvm.juc2041;
 
+
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -19,9 +20,9 @@ import java.util.concurrent.CopyOnWriteArraySet;
 public class NotThreadSafeDemo03 {
 
     public static void main(String[] args) {
-//        listNotSafe();
-//        setNotSafe();
-        mapNotSafe();
+         listNotSafe();
+//         setNotSafe();
+//         mapNotSafe();
 
     }
 
@@ -48,6 +49,7 @@ public class NotThreadSafeDemo03 {
     private static void listNotSafe() {
         List<String> list = new CopyOnWriteArrayList<>();//Collections.synchronizedList(new ArrayList<>());// new Vector<>();//new ArrayList<>();
 
+        // 30个线程同时修改list并打印看结果，结果出现ConcurrentModificationException, 说明arraylist是线程不安全的
         for (int i = 0; i < 30; i++) {
             new Thread(() -> {
                 list.add(UUID.randomUUID().toString().substring(0, 8));

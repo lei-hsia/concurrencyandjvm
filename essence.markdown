@@ -4,3 +4,14 @@
 4. 不安全的ArrayList, Set, Map
 5. 8锁问题
 6. 生产者消费者加1减1问题
+7. 多个线程用lock套装实现精准signal
+8. FutureTask作为Callable和Runnable共同的实现类
+
+---
+
+JVM
+1. jvm体系
+2. 堆体系
+3. 堆调优
+
+JVM是运行在OS上的，跟硬件没有直接关系
