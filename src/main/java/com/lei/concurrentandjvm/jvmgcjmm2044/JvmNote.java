@@ -62,6 +62,8 @@ package com.lei.concurrentandjvm.jvmgcjmm2044;
             YoungGen: 区域小，对象存活率低; 复制也无妨
             OldGen: 区域大，存活率高, 复制就不好了，而是标清和标整的混合使用
 
+
+    12. 线程模型: 生产者生产，然后消费者消费
 * */
 
 public class JvmNote {
