@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 public class SemaphoreDemo {
     public static void main(String[] args) {
 
-        Semaphore semaphore = new Semaphore(3); // 实际上, 如果资源数为1，那么就是多线程争抢同一个资源
+        Semaphore semaphore = new Semaphore(3); // 实际上, 如果资源数为1，那么就是多线程争抢同一个资源,i.e. synchronized
 
         for (int i = 1; i <= 6; i++) {
             new Thread(() -> {
