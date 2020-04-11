@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicStampedReference;
 public class ABADemo { // ABA问题的解决    AtomicStampedReference
     public static void main(String[] args) {
         AtomicReference<Integer> atomicReference = new AtomicReference<>(100);
-        AtomicStampedReference<Integer> atomicStampedReference = new AtomicStampedReference<>(100, 1);
+        AtomicStampedReference<Integer> atomicStampedReference = new AtomicStampedReference<>(100, (int)(System.currentTimeMillis()));
 
         System.out.println("------- 导致ABA问题 ---------");
         new Thread(() -> {
