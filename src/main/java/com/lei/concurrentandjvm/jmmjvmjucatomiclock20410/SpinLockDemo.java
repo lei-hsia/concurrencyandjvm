@@ -6,6 +6,8 @@ import java.util.concurrent.atomic.AtomicReference;
 /*  实际上写法跟CAS中的while循环和compareAndSwap类似
 
     spinlock: 是指尝试获得锁的线程不会立即阻塞，而是采用循环的方式获得锁；减少上下文的切换,不阻塞，但是循环消耗CPU
+
+    理论，代码，小总结
 * */
 public class SpinLockDemo {
     AtomicReference<Thread> atomicReference = new AtomicReference<>(); // 原子引用初始值指向的线程是null

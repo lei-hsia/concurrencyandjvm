@@ -15,8 +15,9 @@ class MyCache {
         try {
             System.out.println(Thread.currentThread().getName()+"\t 写入数据" + key);
             TimeUnit.SECONDS.sleep(1);
-            map.put(key, value);
             System.out.println(Thread.currentThread().getName()+"\t 写入完成");
+            map.put(key, value);
+            TimeUnit.SECONDS.sleep(1);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

@@ -1,5 +1,8 @@
 package com.lei.concurrentandjvm.juc2041;
 
+import java.util.Map;
+import java.util.Set;
+
 /*
 *   queue是空的，从queue中获取ele会阻塞；满的，添加ele阻塞 （注意还是有两端的FIFO结构)
 *   多线程: 阻塞<=>某些判断条件之后，线程执行挂起；然后在满足某些条件之后，不挂起了，唤醒重新执行
@@ -18,4 +21,5 @@ package com.lei.concurrentandjvm.juc2041;
 *
 * */
 public class BlockingQueueDemo {
+
 }
