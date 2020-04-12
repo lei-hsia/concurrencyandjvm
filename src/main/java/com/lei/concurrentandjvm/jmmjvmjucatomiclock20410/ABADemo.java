@@ -1,11 +1,20 @@
 package com.lei.concurrentandjvm.jmmjvmjucatomiclock20410;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.atomic.AtomicStampedReference;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class ABADemo { // ABA问题的解决    AtomicStampedReference
     public static void main(String[] args) {
+//        HashSet
+//        CopyOnWriteArraySet
+        //ReentrantLock
         AtomicReference<Integer> atomicReference = new AtomicReference<>(100);
         AtomicStampedReference<Integer> atomicStampedReference = new AtomicStampedReference<>(100, (int)(System.currentTimeMillis()));
 
