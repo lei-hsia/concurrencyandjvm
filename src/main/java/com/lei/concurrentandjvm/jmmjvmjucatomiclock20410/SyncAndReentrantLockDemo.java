@@ -67,6 +67,8 @@ class ShareResources {
             // 唤醒
             flag = 1; // 改变状态
             condition1.signal();
+            System.out.println();
+            System.out.println();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -89,7 +91,8 @@ public class SyncAndReentrantLockDemo {
         ShareResources shareResources = new ShareResources();
 
         for (int i = 0; i < 5; i++) {
-            System.out.println(">>>>>>>> the"+i+"th round <<<<<<<<<<");
+            // 这一句没有flag标识，所以不能确定会在ABC顺序中的哪里打出来
+            // System.out.println(">>>>>>>> the"+i+"th round <<<<<<<<<<");
             new Thread(() -> {
                 shareResources.print2();
             }, "AA").start();
@@ -101,6 +104,8 @@ public class SyncAndReentrantLockDemo {
             new Thread(() -> {
                 shareResources.print4();
             }, "CC").start();
+
+
         }
     }
 }
