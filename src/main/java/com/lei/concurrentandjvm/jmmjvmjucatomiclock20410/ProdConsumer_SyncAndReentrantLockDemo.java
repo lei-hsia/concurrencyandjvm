@@ -86,7 +86,7 @@ class ShareResources {
 *       5.  精准唤醒:  不能       可以
 * */
 // 要求: 多线程按顺序调用: A2次->B3次->C4次:
-public class SyncAndReentrantLockDemo {
+public class ProdConsumer_SyncAndReentrantLockDemo {
     public static void main(String[] args) {
         ShareResources shareResources = new ShareResources();
 
