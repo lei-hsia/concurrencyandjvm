@@ -1,9 +1,6 @@
 package com.lei.concurrentandjvm.jmmjvmjucatomiclock20410;
 
-import javax.sound.midi.Soundbank;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 class MyResources {
@@ -61,6 +58,7 @@ public class ProdConsumer_BlockingQueueDemo {
 
         MyResources myResources = new MyResources(new ArrayBlockingQueue<>(10));
 
+        // 创建一个thread(Runnable, threadName): 如果资源类本身实现了Runnable,就不用用lambda表达式了，直接创建一个资源类对象就行了
         new Thread(() -> {
             try {
                 System.out.println(Thread.currentThread().getName()+"\t 生产线程启动");
