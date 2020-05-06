@@ -16,6 +16,18 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>-->
+
+    <!--<dependencies>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>asm</groupId>
+            <artifactId>asm</artifactId>
+        </dependency>
+    </dependencies>-->
+
     <build>
         <plugins>
             <plugin>

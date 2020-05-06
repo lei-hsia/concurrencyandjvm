@@ -2,6 +2,7 @@ package com.lei.concurrentandjvm.juc2041;
 
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /*
 *   queue是空的，从queue中获取ele会阻塞；满的，添加ele阻塞 （注意还是有两端的FIFO结构)
@@ -21,5 +22,6 @@ import java.util.Set;
 *
 * */
 public class BlockingQueueDemo {
-
+    public static void main(String[] args) {
+    }
 }
