@@ -57,4 +57,10 @@ ref(可能多行) > `range(片区)` > index > ALL(全表扫描)**
     - Using where
     - Using buffer: `my.cnf: buffer`
     - *filesort, temporary, index三种最重要*
+    
+---
+
+后面是mysql-case的案例: 注意 subquery & derived的区别: 有明显outer/inner select的
+内层select是subquery, (这个例子中) from (select ...)是derived: 也就是非subquery类型
+的select都是derived类型
      
