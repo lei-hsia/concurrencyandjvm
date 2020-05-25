@@ -55,7 +55,7 @@ ref(可能多行) > `range(片区)` > index > ALL(全表扫描)**
         - 出现using where: 表明索引被用来执行索引KV的查找；
         - 没有using where: 表明索引被用来读取数据而不是执行查找动作;
     - Using where
-    - Using buffer: `my.cnf: buffer`
+    - Using join buffer: `my.cnf: buffer`
     - *filesort, temporary, index三种最重要*
     
 ---
@@ -64,3 +64,21 @@ ref(可能多行) > `range(片区)` > index > ALL(全表扫描)**
 内层select是subquery, (这个例子中) from (select ...)是derived: 也就是非subquery类型
 的select都是derived类型
      
+---
+case: 
+
+1. 单表建立索引: 直接加
+2. 两表: 
+    - left join: 因为左边一定都有，所以右边是关键点，要加索引
+    - right join: 如果DBA为全局建索引，你查的刚好反过来, 那么left/right换一下就行
+3. 三表: `EXPLAIN SELECT * FROM class LEFT JOIN book ON class.card = book.card
+LEFT JOIN phone ON book.card = phone.card`
+    - 两个left join，建立两个在右边的上面的索引;
+    - 可以看出，小表驱动大表: "永远用小结果集驱动大结果集": 圆规
+    - 大驱动小: 就是先大量IO，然后高射炮打蚊子
+    - 都是先优化内层嵌套的sql
+    - 很多表join并且需要被join结果作为小表时: join buffer可以设置
+    
+---
+
+索引 == 某个字段排序

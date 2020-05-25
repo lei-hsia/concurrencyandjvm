@@ -1,0 +1,27 @@
+```roomsql
+CREATE TABLE staffs(
+id INT PRIMARY KEY AUTO_INCREMENT,
+`name` VARCHAR(24)NOT NULL DEFAULT'' COMMENT'姓名',
+`age` INT NOT NULL DEFAULT 0 COMMENT'年龄',
+`pos` VARCHAR(20) NOT NULL DEFAULT'' COMMENT'职位',
+`add_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT'入职时间'
+)CHARSET utf8 COMMENT'员工记录表';
+INSERT INTO staffs(`name`,`age`,`pos`,`add_time`) VALUES('z3',22,'manager',NOW());
+INSERT INTO staffs(`name`,`age`,`pos`,`add_time`) VALUES('July',23,'dev',NOW());
+INSERT INTO staffs(`name`,`age`,`pos`,`add_time`) VALUES('2000',23,'dev',NOW());
+
+ALTER TABLE staffs ADD INDEX index_staffs_nameAgePos(`name`,`age`,`pos`)
+```
+
+避免索引失效: 
+
+1. 最佳左前缀法则: 建什么索引就要从它开始,中间也不能断;所以要用最后一个索引，
+也要从前面所有的开始; "带头大哥不能死，中间兄弟不能断": 要查最后的结果，
+中间的过程对mysql也很重要
+
+![prefix](/Users/xialei/Desktop/prefix.png)
+
+2. 不在索引上做任何操作，否则导致索引失效并转向全表扫描: "索引列上不计算"
+
+![noop](/Users/xialei/Desktop/noop.png)
+
