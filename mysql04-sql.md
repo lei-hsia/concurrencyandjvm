@@ -47,3 +47,15 @@ ALTER TABLE staffs ADD INDEX index_staffs_nameAgePos(`name`,`age`,`pos`)
 案例: 
 
 ![eg](/Users/xialei/Desktop/e.g..png)
+
+注: mysql这些高效索引, 也可以用在mybatis中
+
+---
+
+order by: 
+    - c2, c3: 顺序，用于查找; using where;
+    - c3, c2: 先排序再查找: Using filesort;
+    
+group by: 分组，必排序;
+    - c2 c3: 只用c1, etc.查找；
+    - c3,c2: Using temporary
