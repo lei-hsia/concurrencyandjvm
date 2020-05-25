@@ -43,3 +43,7 @@ ALTER TABLE staffs ADD INDEX index_staffs_nameAgePos(`name`,`age`,`pos`)
 - like百分加右边
 - 范围之后全失效
 - varchar引号不能丢
+
+案例: 
+
+![eg](/Users/xialei/Desktop/e.g..png)
