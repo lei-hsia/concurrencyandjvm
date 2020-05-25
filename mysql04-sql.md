@@ -18,10 +18,17 @@ ALTER TABLE staffs ADD INDEX index_staffs_nameAgePos(`name`,`age`,`pos`)
 1. 最佳左前缀法则: 建什么索引就要从它开始,中间也不能断;所以要用最后一个索引，
 也要从前面所有的开始; "带头大哥不能死，中间兄弟不能断": 要查最后的结果，
 中间的过程对mysql也很重要
-
 ![prefix](/Users/xialei/Desktop/prefix.png)
-
 2. 不在索引上做任何操作，否则导致索引失效并转向全表扫描: "索引列上不计算"
+![noop](/Users/xialei/Desktop/noop.png) 
 
-![noop](/Users/xialei/Desktop/noop.png)
+3. 范围之后全失效: `where name='July' and age > 25;`: name用于检索，age只是排序
 
+4. 尽量使用覆盖索引, 少用 select *; 会在type, Extra, key_len上都会有更好的表现: 
+![cover](/Users/xialei/Desktop/cover.png)
+5. 不要用! <>, 无法使用索引导致全表扫描
+![!](/Users/xialei/Desktop/!.png)
+6. is null, is not null: 不能使用索引
+7. like: '%July%','%July','July%'✅: like的百分号只写在右边;左边相当于精确匹配; 如果非两边都用，
+那么建立**覆盖索引**，避免索引失效，避免全表扫描; i.e. *覆盖索引解决like %%的问题*, 但是select不能用*
+![cover1](/Users/xialei/Desktop/cover1.png)
