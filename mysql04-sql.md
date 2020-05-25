@@ -30,5 +30,16 @@ ALTER TABLE staffs ADD INDEX index_staffs_nameAgePos(`name`,`age`,`pos`)
 ![!](/Users/xialei/Desktop/!.png)
 6. is null, is not null: 不能使用索引
 7. like: '%July%','%July','July%'✅: like的百分号只写在右边;左边相当于精确匹配; 如果非两边都用，
-那么建立**覆盖索引**，避免索引失效，避免全表扫描; i.e. *覆盖索引解决like %%的问题*, 但是select不能用*
+那么建立**覆盖索引**，避免索引失效，避免全表扫描; i.e. *覆盖索引解决like %%的问题, 不过必须是按建索引的顺序,
+如果是where条件，中间是可以有and连接的*
+
 ![cover1](/Users/xialei/Desktop/cover1.png)
+8. 字符串varchar类型不加单引号: 发生了隐式类型转换: 2: baka
+
+索引 总结: 
+- 带头大哥不能死
+- 中间兄弟不能断
+- 索引列上不计算
+- like百分加右边
+- 范围之后全失效
+- varchar引号不能丢
