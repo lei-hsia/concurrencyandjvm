@@ -59,3 +59,12 @@ order by:
 group by: 分组，必排序;
     - c2 c3: 只用c1, etc.查找；
     - c3,c2: Using temporary
+
+---
+
+supplementary examples:
+
+1. where a = 3 and b like 'kk%' and c = 4; // 93
+2. where a = 3 and b like '%kk' and c = 4; // 31
+3. where a = 3 and b like '%kk%' and c = 4; // 31
+4. where a = 3 and b like 'k%kk%' and c = 4; // 93
