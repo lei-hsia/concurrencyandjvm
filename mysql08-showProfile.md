@@ -7,6 +7,8 @@
 
 ### Show Profile
 
+https://dev.mysql.com/doc/refman/8.0/en/show-profile.html
+
 是mysql提供的用来分析当前session中语句执行的资源消耗情况; 可用于sql调优;
 
 - `show variables like 'profiling'; `
