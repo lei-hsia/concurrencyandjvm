@@ -42,3 +42,7 @@ CALL insert_emp(100001, 500000);
 - 50w条: 78s; 500w: 1700s ~ 30min
 - select * (50w): 1.52s;
 - 超过1000w: mysql性能明显下降: 需explain, 开启mysqldumpslow之类的分析; 或者show profiles; 或者用hive
+
+---
+
+每个核心系统都有另外的辅助监控系统看着
