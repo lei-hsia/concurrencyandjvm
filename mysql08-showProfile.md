@@ -34,3 +34,8 @@ e.g.
 ...
 - `select * from mysql.general_log;`
 
+---
+
+以上wrap了: 2. 索引优化分析；3. 查询截取分析
+
+下面: 4. mysql锁机制；5. 主从
