@@ -41,7 +41,7 @@ i.e. 读未提交
 1、Serializable （串行化）：最严格的级别，事务串行执行，资源消耗最大；
 
 2、*REPEATABLE READ（重复读）* ：保证了一个事务不会修改已经由另一个事务读取但未提交（回滚）的数据。避免了“脏读取”和“不可重复读取”的情况，但不能避免“幻读”，但是带来了更多的性能损失。
-> InnoDB, 可重复读，通过行锁，解决幻读问题: `show variables like 'tx_isolation';`
+> InnoDB, 可重复读，通过行锁，解决幻读问题: `show variables like 'tx_isolation';` e.g. mysql: 保证了一个事务动过那个数据之后，别的事务不能动了
 
 3、READ COMMITTED （提交读）：大多数主流数据库的默认事务等级，保证了一个事务不会读到另一个并行事务已修改但未提交的数据，避免了“脏读取”，但不能避免“幻读”和“不可重复读取”。该级别适用于大多数系统。
 
@@ -50,3 +50,4 @@ i.e. 读未提交
 **读写一致性: `事务级`; mysql的默认级别: RR(Repeatable Read)**
 
 
+[参考资料](https://blog.csdn.net/Vincent2014Linux/article/details/89669762)
