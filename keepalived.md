@@ -25,3 +25,11 @@ keepalived实际上有2个功能:
 keepalived安装和配置:
 1. [安装](https://www.keepalived.org/download.html)
 
+2. `keepalived.conf`配置文件中三部分:
+    - `global_defs`: GLOBAL
+    - `vrrp_instance VI_1`: VRRPD
+    - `virtual_server`: LVS
+    
+3. `keepalived.conf`中用`virtual_server`部分实现LVS的配置，相比较直接用
+`ipvsadm`命令配置，就好像K8S用资源清单的方式配置，相比较直接用`kubectl`命令
+的方式配置
