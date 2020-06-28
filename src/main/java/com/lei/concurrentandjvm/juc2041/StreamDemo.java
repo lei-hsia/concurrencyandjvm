@@ -5,7 +5,7 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-
+// java8特性: 实际上是因为stream流式函数，要实现函数，才有了lambda表达式的用武之地
 public class StreamDemo {
     public static void main(String[] args) {
 
