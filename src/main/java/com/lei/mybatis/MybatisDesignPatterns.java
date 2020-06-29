@@ -51,7 +51,10 @@ class LogFactory {
 
 }
 
-/* 代理模式:借助MapperProxy; 而proxy用MapperProxyFactory工厂模式创建出来的 */
+/* 代理模式:借助MapperProxy; 而proxy用MapperProxyFactory工厂模式创建出来的; 是mybatis可以只写接口就操作SQL的核心:
+*
+*   MapperProxyFactory > MapperProxy > MapperProxy.invoke > sqlSession > executor.execute > prepareStatement
+*  */
 class MapperProxyFactory<T> {
     private final Class<T> mapperInterface;
     private final Map<Method, MapperMethod> methodCache = new ConcurrentHashMap();
@@ -114,3 +117,5 @@ class MapperProxy<T> implements InvocationHandler, Serializable {
     }
 }
 */
+
+// 组合模式: XML中各个元素的动态SQL获取到真实值，就是通过组合模式
