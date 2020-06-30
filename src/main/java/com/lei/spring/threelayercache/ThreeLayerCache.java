@@ -22,7 +22,6 @@ public class ThreeLayerCache {
 
     private final Map<String, ObjectFactory<?>> singletonFactories = new HashMap<String, ObjectFactory<?>>(16);
 
-
     // 尝试从三级缓存获取单例
     protected Object getSingleton(String beanName, boolean allowEarlyReference) {
 
@@ -44,5 +43,10 @@ public class ThreeLayerCache {
         }
 
         return (singletonObject != NULL_OBJECT ? singletonObject : null);
+    }
+
+    // 实际上是spring源码底层自己有的方法: to be modified
+    private boolean isSingletonCurrentlyInCreation(String beanName) {
+        return false;
     }
 }
