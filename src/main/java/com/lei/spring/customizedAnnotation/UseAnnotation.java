@@ -1,9 +1,14 @@
 package com.lei.spring.customizedAnnotation;
 
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.lang.reflect.Method;
 
 public class UseAnnotation {
 
+    // @Transactional(propagation = Propagation.MANDATORY , rollbackFor = Isolation.READ_COMMITTED)
     @SimpleAnnotation("testStringValue")
     public void testMethod() {
         // do something
