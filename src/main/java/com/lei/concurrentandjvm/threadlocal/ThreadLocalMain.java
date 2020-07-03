@@ -1,4 +1,4 @@
-package com.lei.concurrentandjvm.lateradded;
+package com.lei.concurrentandjvm.threadlocal;
 
 public class ThreadLocalMain {
     private static void incrementSameThreadId() {
