@@ -1,4 +1,4 @@
-package com.lei.javase;
+package com.lei.javase.module;
 
 public class ModuleAndXand {
     public static void main(String[] args) {
