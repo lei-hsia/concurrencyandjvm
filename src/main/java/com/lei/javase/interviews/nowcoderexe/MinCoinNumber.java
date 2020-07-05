@@ -17,5 +17,7 @@ public class MinCoinNumber {
             num = num % coins[i];
         }
         System.out.println(count);
+        String a;
+
     }
 }
