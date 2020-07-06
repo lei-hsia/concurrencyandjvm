@@ -15,7 +15,7 @@ public class CorrectWords {
         int n = in.nextInt();
         in.nextLine();
         for(int i = 0; i < n; ++i) {
-            System.out.println(in.nextLine().replaceAll("(.)\\1+","$1$1").replaceAll("(.)\\1(.)\\2", "$1$1$2"));
+            System.out.println(in.nextLine().replaceAll("(.)\\1+", "$1$1").replaceAll("(.)\\1(.)\\2", "$1$1$2"));
         }
     }
 }
