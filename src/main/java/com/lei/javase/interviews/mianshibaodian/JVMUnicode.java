@@ -14,5 +14,6 @@ public class JVMUnicode {
 
         char han1 = 0x6c38;
         System.out.println(han1);
+
     }
 }
