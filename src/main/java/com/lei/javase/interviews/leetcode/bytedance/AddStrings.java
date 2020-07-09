@@ -13,4 +13,3 @@ public class AddStrings {
         return sb.reverse().toString();
     }
 }
-}
