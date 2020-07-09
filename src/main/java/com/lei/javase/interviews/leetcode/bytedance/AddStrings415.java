@@ -1,6 +1,6 @@
 package com.lei.javase.interviews.leetcode.bytedance;
 
-public class AddStrings {
+public class AddStrings415 {
     public String addStrings(String num1, String num2) {
         StringBuilder sb = new StringBuilder();
         int carry = 0;
