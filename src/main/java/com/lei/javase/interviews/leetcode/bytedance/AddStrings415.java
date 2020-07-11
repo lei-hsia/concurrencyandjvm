@@ -1,5 +1,7 @@
 package com.lei.javase.interviews.leetcode.bytedance;
 
+/*  for(1; 2; 3) { 4;} 执行顺序: 第一次1243，第二次243...
+* */
 public class AddStrings415 {
     public String addStrings(String num1, String num2) {
         StringBuilder sb = new StringBuilder();
