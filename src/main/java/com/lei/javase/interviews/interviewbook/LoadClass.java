@@ -1,4 +1,4 @@
-package com.lei.javase.interviews.mianshibaodian;
+package com.lei.javase.interviews.interviewbook;
 
 public class LoadClass {
     // JVM加载类: forName， loadClass方法的不同点

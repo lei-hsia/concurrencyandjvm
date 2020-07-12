@@ -1,4 +1,4 @@
-package com.lei.javase.interviews.mianshibaodian;
+package com.lei.javase.interviews.interviewbook;
 
 public class TmpIncrement {
     public static void main(String[] args) {

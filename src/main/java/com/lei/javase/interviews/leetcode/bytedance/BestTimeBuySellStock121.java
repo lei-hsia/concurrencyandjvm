@@ -9,10 +9,10 @@ public class BestTimeBuySellStock121 {
     public int maxProfit(int[] prices) {
         int n = prices.length;
         if (n == 0) return 0;
-        int res = 0, min = prices[0];
+        int res = 0, min = prices[0]; // min: 初始冲量
         for (int i = 1; i < n; ++i) {
-            res = Math.max(res, prices[i] - min);
-            min = Math.min(min, prices[i]);
+            res = Math.max(res, prices[i] - min); // 遍历所有prices[i], 减去min, 得到res
+            min = Math.min(min, prices[i]); // 遍历过程中不断更新min, 这样获得整个数组最小的min
         }
         return res;
     }
